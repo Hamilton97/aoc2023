@@ -1,4 +1,5 @@
 import os
+import re
 from pathlib import Path
 
 char = str
@@ -13,12 +14,12 @@ def main():
     values = []
     for stream in streams:
         # iterate over each value, find the int
-        digits = []
-        for char in stream:
-            if char.isdigit():
-                digits.append(char)
-            else:
-                continue
+        digits = re.findall(r'1|2|3|4|5|6|7|8|9', stream)
+        # for char in stream:
+        #     if char.isdigit():
+        #         digits.append(char)
+        #     else:
+        #         continue
         
         # get the first and last from the list and concat
         # add a check if the len of digits from the stream is one duplicate it
