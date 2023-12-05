@@ -35,7 +35,7 @@ def main():
     for line in data:
         game_id = get_game_id(line)
         game_data = get_game_data(line)
-        
+
         if not any([gdat[1] > m.get(gdat[0]) for gdat in game_data]):
             print(f'Adding Game ID: {game_id}')
             sum += game_id
